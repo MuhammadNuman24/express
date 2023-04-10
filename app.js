@@ -3,10 +3,23 @@ const app= express();
 
 const port = 8000;
 app.get("/", (req, res)=>{
-    res.send("Hello World From Express");
+    res.send("<h1>Hello World From Express</h1>"); // html responce 
 })
 app.get("/about", (req, res)=>{
-    res.status(200), res.send("Wel Come from About Page ");
+    res.send([
+        {
+            id:01,
+            name:"Numan"
+        },
+        {
+            id:02,
+            name:"Ali"
+        },
+        {
+            id:03,
+            name:"Sufyan"
+        }
+    ]);
 })
 app.listen(port,()=>{
     console.log (`Listening  on port ${port}`);
